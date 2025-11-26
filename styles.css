@@ -2,9 +2,9 @@
 
 :root {
   --text: hsl(206 75% 15%);
-  --text-highlight: hsl(206 75% 20%);
-  --button-bg: hsl(206 90% 83%);
-  --button-bg-highlighted: hsl(206 90% 88%);
+  --button-bg: hsl(206 90% 30%);
+  --button-bg-highlighted: hsl(206 90% 40%);
+  --accent: hsl(236 80% 70%);
 }
 
 body {
@@ -19,31 +19,33 @@ body {
   align-items: center;
   justify-content: center;
 
-  font-size: 12pt;
+  font-size: 1.5rem;
 
   h1 {
-    font-size: 30pt;
-    margin-bottom: 0;
+    font-size: 3.5rem;
+    margin: 0;
   }
 
-  .links {
-    margin-top: 10px;
+  a {
+    display: block;
+    min-width: 7rem;
+    text-align: center;
+    padding: 10px 15px;
+    margin: 20px;
+    background-color: var(--button-bg);
+    border-radius: 20px;
+    text-decoration: none;
+    color: white;
 
-    a {
-      display: block;
-      padding: 10px 15px;
-      margin: 20px;
-      background-color: var(--button-bg);
-      border-radius: 20px;
-      text-decoration: none;
-      color: var(--text);
+    transition: background-color 0.2s ease-in-out;
 
-      transition: all 0.2s ease-in-out;
+    &:hover,
+    &:focus-visible {
+      background-color: var(--button-bg-highlighted);
+    }
 
-      &:hover {
-        color: var(--text-highlight);
-        background: var(--button-bg-highlighted);
-      }
+    &:focus-visible {
+      outline: 4px solid var(--accent);
     }
   }
 }
